@@ -45,6 +45,38 @@ const SuhuMain = async () => {
             <div className="p-1">
               <Card className="bg-white/40 flex flex-col items-center gap-5">
                 <CardHeader className="pb-0 text-center items-center">
+                  <CardTitle className="mb-5">Wakil Direktur Eksternal</CardTitle>
+                  <Avatar className="h-32 w-32 shadow-md shadow-white">
+                    <AvatarImage src={'/farhan.jpg'} />
+                    <AvatarFallback className="bg-white/80 text-black shadow-md">No Img</AvatarFallback>
+                  </Avatar>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <p className="font-bold text-lg">Ns. Farhan Saputra, S.Kep</p>
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+            <div className="p-1">
+              <Card className="bg-white/40 flex flex-col items-center gap-5">
+                <CardHeader className="pb-0 text-center items-center">
+                  <CardTitle className="mb-5">Wakil Direktur Internal</CardTitle>
+                  <Avatar className="h-32 w-32 shadow-md shadow-white">
+                    <AvatarImage src={'/alfi.jpg'} />
+                    <AvatarFallback className="bg-white/80 text-black shadow-md">No Img</AvatarFallback>
+                  </Avatar>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <p className="font-bold text-lg">Ns. Alfiatur Rahmi, S.Kep</p>
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+            <div className="p-1">
+              <Card className="bg-white/40 flex flex-col items-center gap-5">
+                <CardHeader className="pb-0 text-center items-center">
                   <CardTitle className="mb-5">Sekretaris Umum</CardTitle>
                   <Avatar className="h-32 w-32 shadow-md shadow-white">
                     <AvatarImage src={'/rahmah.jpg'} />
@@ -69,38 +101,6 @@ const SuhuMain = async () => {
                 </CardHeader>
                 <CardContent className="text-center">
                   <p className="font-bold text-lg">Ns. Rona Firyal Ilyas, S.Kep</p>
-                </CardContent>
-              </Card>
-            </div>
-          </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-            <div className="p-1">
-              <Card className="bg-white/40 flex flex-col items-center gap-5">
-                <CardHeader className="pb-0 text-center items-center">
-                  <CardTitle className="mb-5">Wakil Direktur P.Internal</CardTitle>
-                  <Avatar className="h-32 w-32 shadow-md shadow-white">
-                    <AvatarImage src={'/alfi.jpg'} />
-                    <AvatarFallback className="bg-white/80 text-black shadow-md">No Img</AvatarFallback>
-                  </Avatar>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <p className="font-bold text-lg">Ns. Alfiatur Rahmi, S.Kep</p>
-                </CardContent>
-              </Card>
-            </div>
-          </CarouselItem>
-          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-            <div className="p-1">
-              <Card className="bg-white/40 flex flex-col items-center gap-5">
-                <CardHeader className="pb-0 text-center items-center">
-                  <CardTitle className="mb-5">Wakil Direktur P. Eksternal</CardTitle>
-                  <Avatar className="h-32 w-32 shadow-md shadow-white">
-                    <AvatarImage src={'/farhan.jpg'} />
-                    <AvatarFallback className="bg-white/80 text-black shadow-md">No Img</AvatarFallback>
-                  </Avatar>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <p className="font-bold text-lg">Ns. Farhan Saputra, S.Kep</p>
                 </CardContent>
               </Card>
             </div>
