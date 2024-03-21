@@ -80,7 +80,7 @@ const Footer = async() => {
                 </div>
                 <div className="px-16 border-t-2 border-t-black bg-white text-center text-slate-500 py-4 drop-shadow-md text-sm dark:text-white">
                     Copyright &copy; {new Date().getFullYear()} Muhammad Alim Kakani |
-                    Freelance for Money and Happyness
+                    Gen-A Operator
                 </div>
             </footer>
 

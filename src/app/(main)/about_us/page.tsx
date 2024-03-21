@@ -39,7 +39,7 @@ const Page = async () => {
       <section>
         <div className="bg-primary-gradient text-primary-foreground">
           <div className="flex justify-between flex-wrap">
-            <div className="space-y-5 px-20 py-20 lg:py-0 flex flex-col justify-center lg:w-[45%]">
+            <div className="space-y-5 px-10 py-20 lg:py-0 flex flex-col justify-center lg:w-[45%]">
               <h3 className="text-3xl font-bold">Siapa kami ?</h3>
               <hr className="w-3/6 border border-black" />
               <div dangerouslySetInnerHTML={{ __html: config.deskripsiOrganisasi ? config.deskripsiOrganisasi : "" }}></div>
@@ -57,7 +57,7 @@ const Page = async () => {
             <div className="relative w-full overflow-hidden h-[50vh] lg:w-[50%]">
               <Image className="object-cover" src="/gallery/gallery17.png" alt="picture" fill priority/>
             </div>
-            <div className="space-y-5 px-20 py-20 lg:py-0 flex flex-col justify-center lg:w-[45%]">
+            <div className="space-y-5 px-10 py-20 lg:py-0 flex flex-col justify-center lg:w-[45%]">
               <h3 className="text-3xl font-bold">Legalitas Lembaga</h3>
               <hr className="w-3/6 border border-third-foreground" />
               <p className="indent-6 text-justify">
@@ -214,7 +214,7 @@ const Page = async () => {
 
       {/* ------------------------------------------------- Mitra ----------------------------------------------------------- */}
 
-      <section id="mitra" className="py-36 px-20 bg-[url(/wavy/haikei/circle-scatter-haikei.svg)] bg-cover">
+      <section id="mitra" className="py-36 px-10 bg-[url(/wavy/haikei/circle-scatter-haikei.svg)] bg-cover">
         <div className="mt-20 w-full">
           <h3 className="text-center">Mitra Kami</h3>
           <hr className="mx-auto w-3/6 my-10 border-black" />
@@ -233,7 +233,7 @@ const Page = async () => {
       <Separator className="bg-secondary-gradient w-full" />
       {/* ---------------------------------------- afiliasi singkat ----------------------------------------------------------------- */}
 
-      <section className="py-36 px-20 bg-[url(/wavy/haikei/circle-scatter-haikei_left.svg)] bg-cover">
+      <section className="py-36 px-10 bg-[url(/wavy/haikei/circle-scatter-haikei_left.svg)] bg-cover">
         <div className="mt-20 w-full">
           <h3 className="text-center">Subunit Kami</h3>
           <hr className="mx-auto w-3/6 my-10 border-black" />

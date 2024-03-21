@@ -24,7 +24,7 @@ const Page = () => {
       <section className="h-[90vh] relative flex flex-col gap-5 justify-center items-center bg-gradient-to-t from-black/90 via-black/80 text-white p-10 xl:px-96 text-center">
         {/* <HeroSlider /> */}
         <span className="font-semibold tracking-widest text-sm">Nanggroe Aceh Darussalam</span>
-        <h1 className="font-bold text-6xl sm:text-7xl">Generasi Edukasi Aceh</h1>
+        <h1 className="font-bold text-6xl sm:text-7xl">Generasi Edukasi Nanggroe Aceh</h1>
         <p>Lembaga Swadaya Masyarakat yang digagas sebagai bentuk kepedulian dan keinginan kuat untuk menjadi Katalisator bagi pembangunan karakter Generasi Unggul Aceh</p>
         <div className="flex gap-5">
           <Button asChild size="lg" variant="outline"><Link href="#tentang">Tentang Kami</Link></Button>
@@ -42,7 +42,7 @@ const Page = () => {
           <div className="space-y-5 xl:w-1/2 w-full">
             <h3 className="text-4xl">Siapa Kami?</h3>
             <hr className="border border-third w-2/6" />
-            <p><span className="font-semibold">Generasi Edukasi Nanggroe Aceh Darussalam (GEN-A)</span> adalah Lembaga Swadaya Masyarakat yang digagas sebagai bentuk kepedulian dan keinginan kuat untuk menjadi <span className="font-semibold">Katalisator</span> bagi pembangunan karakter <span className="font-semibold">Generasi Unggul Aceh</span> melalui <span className="font-semibold">Pengabdian Masyarakat, Pelatihan dan Penelitian</span></p>
+            <p><span className="font-semibold">Generasi Edukasi Nanggroe Aceh (GEN-A)</span> adalah Lembaga Swadaya Masyarakat yang digagas sebagai bentuk kepedulian dan keinginan kuat untuk menjadi <span className="font-semibold">Katalisator</span> bagi pembangunan karakter <span className="font-semibold">Generasi Unggul Aceh</span> melalui <span className="font-semibold">Pengabdian Masyarakat, Pelatihan dan Penelitian</span></p>
             <Button asChild><Link href="/about_us">Tentang kami <GiSupersonicArrow className="ml-3" /></Link></Button>
           </div>
           <div className="relative xl:w-1/3 w-full h-full flex justify-center flex-grow">
@@ -60,7 +60,7 @@ const Page = () => {
             <Image src='/suhu-part.png' alt="suhu" width={600} height={600} />
           </div>
           <div className="space-y-5 xl:w-[60%] w-full">
-            <div className="pt-7 pb-10 px-16 rounded-xl xl:-ml-20 text-white">
+            <div className="pt-7 pb-10 px-5 lg:px-16 rounded-xl xl:-ml-20 text-white">
               <h3 className="text-4xl mb-5">BPH</h3>
               <p>Roda penggerak yang menggerakkan mesin keberhasilan organisasi. Pengambil keputusan dan juga pemimpin yang mampu merangkul visi bersama, membangun kolaborasi, dan mendorong tim untuk mencapai kesuksesan bersama.</p>
               <div className="mt-5 mb-10">
