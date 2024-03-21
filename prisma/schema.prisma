@@ -1,0 +1,191 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model User {
+  id             String     @id @default(cuid())
+  nama           String
+  email          String     @unique
+  emailVerified  DateTime?
+  username       String     @db.VarChar(30)
+  hashedPassword String
+  role           Role       @default(User)
+  profile        String?
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+  berita         Berita[]
+  kegiatan       Kegiatan[]
+}
+
+model Anggota {
+  id           String        @id @default(cuid())
+  nama         String
+  tanggalLahir DateTime      @map("tanggal_lahir")
+  gender       Gender
+  jabatan      Jabatan
+  pendidikan   Pendidikan
+  bidang       String?
+  keahlian     String
+  email        String        @unique
+  instagram    String?
+  telephone    String?
+  profile      String?
+  about        String
+  status       StatusAnggota @default(Aktif)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  afiliasi   Afiliasi @relation(fields: [afiliasiId], references: [id])
+  afiliasiId String
+  Berita     Berita[]
+}
+
+model Afiliasi {
+  id        String     @id @default(cuid())
+  nama      String     @db.VarChar(50)
+  urutan    Int?
+  singkatan String     @db.VarChar(15)
+  deskripsi String
+  warna     String
+  logo      String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  anggota   Anggota[]
+  kegiatan  Kegiatan[]
+}
+
+model Berita {
+  id      Int        @id @default(autoincrement())
+  judul   String
+  konten  String
+  gambar  String
+  link    String
+  tanggal DateTime   @default(now())
+  status  StatusBlog @default(pending)
+
+  editor   User   @relation(fields: [editorId], references: [id])
+  editorId String
+
+  author   Anggota @relation(fields: [authorId], references: [id])
+  authorId String
+
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  kategori  Kategori[]
+}
+
+model Kategori {
+  id     Int      @id @default(autoincrement())
+  nama   String   @unique
+  berita Berita[]
+}
+
+model Tags {
+  id       Int        @id @default(autoincrement())
+  nama     String
+  kegiatan Kegiatan[]
+}
+
+model Kegiatan {
+  id             Int       @id @default(autoincrement())
+  nama           String
+  keyword        String
+  deskripsi      String
+  tanggal        DateTime  @default(now())
+  gambar         String
+  isUnggulan     Boolean   @default(false)
+  unggulanUpdate DateTime?
+
+  tags Tags[]
+
+  subUnit    Afiliasi @relation(fields: [afiliasiId], references: [id])
+  afiliasiId String
+
+  author   User   @relation(fields: [authorId], references: [id])
+  authorId String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model karyaTulisan {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Galleri {
+  id        Int      @id @default(autoincrement())
+  gambar    String
+  title     String?
+  deskripsi String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Konfigurasi {
+  id                  String  @id @default(cuid())
+  keyword             String
+  metadata            String
+  namaOrganisasi      String
+  singkatanOrganisasi String
+  motto               String
+  motto2              String?
+  deskripsiOrganisasi String
+  deskripsiWeb        String
+  URLWebsite          String
+  emailOrganisasi     String
+  telOrganisasi       String
+  alamatOrganisasi    String
+  facebook            String?
+  instagram           String?
+  youtube             String?
+  URLfacebook         String?
+  URLinstagram        String?
+  URLyoutube          String?
+}
+
+enum Role {
+  User
+  Admin
+}
+
+enum Gender {
+  L
+  P
+}
+
+enum StatusBlog {
+  pending
+  publish
+}
+
+enum Jabatan {
+  Ketua
+  Sekretaris
+  Bendahara
+  Anggota
+}
+
+enum StatusAnggota {
+  Aktif
+  TidakAktif
+}
+
+enum Pendidikan {
+  SMA
+  KULIAH
+  D3
+  S1
+  S2
+  S3
+}
